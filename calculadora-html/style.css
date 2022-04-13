@@ -1,0 +1,48 @@
+body{
+    font-family: 'Space Mono', monospace, sans-serif;
+}
+
+
+
+table{
+    background-color: gray;
+    border: gray 2px solid;
+    border-collapse:collapse ;
+    margin:100px auto;
+    width: 10%;
+	height: 400px;
+}
+td{
+    border: gray 1px solid;
+}
+
+tr{
+    border: gray 1px solid;
+}
+
+button{
+   margin: 0px;
+   width: 70px;
+   height: 65px;
+   text-align: center;
+   font-size: 25px;
+   
+}
+.ac{
+    width: 142px;
+}
+.cero{
+    width: 142px;
+}
+
+.pantalla{
+    font-size: 55px;
+    text-align: right;
+    color: white;
+    background-color: rgb(30, 30, 66);
+}
+
+.operacion{
+    background-color: orange;
+    color: white;
+}
