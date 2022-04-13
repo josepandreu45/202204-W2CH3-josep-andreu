@@ -1,0 +1,210 @@
+*{
+    margin:0;
+}
+.content{
+    
+    background-color: #0466c8;
+    color: #adb5bd;
+    height: 600px;
+    width: 97%;
+    
+    position: absolute;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    
+}
+
+.rosco {
+  position:relative;
+  
+  border-radius : 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: 90px;
+  margin-left: 80px;
+   
+    
+    
+}
+.letra{
+    
+    position:absolute;
+    left:calc(50% - 20px);
+    top:calc(50% - 20px);
+    height: 30px;
+    width: 30px;
+    border: 2px solid #adb5bd;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #023e8a;
+}
+
+
+
+.a{
+    transform: rotate(-90deg) translate(200px) rotate(90deg);
+    font-size: 25px;
+}
+.b {
+    transform: rotate(-76.667deg) translate(200px) rotate(76.667deg);
+    font-size: 25px;
+}   
+
+.c {
+    transform: rotate(-63.334deg) translate(200px) rotate(63.334deg);
+    font-size: 25px;
+}
+.d {
+    transform: rotate(-50.001deg) translate(200px) rotate(50.001deg);
+    font-size: 25px;
+    
+}
+.e{
+    transform: rotate(-36.668deg) translate(200px) rotate(36.668deg);
+    font-size: 25px;
+    
+}
+.f{
+    transform: rotate(-23.335deg) translate(200px) rotate(23.335deg);
+    font-size: 25px;
+}
+.g{
+    transform: rotate(-10.002deg) translate(200px) rotate(10.002deg);
+    font-size: 25px;
+}
+.h{
+    transform: rotate(3.331deg) translate(200px) rotate(-3.331deg);
+    font-size: 25px;
+}
+.i{
+    transform: rotate(16.664deg) translate(200px) rotate(-16.664deg);
+    font-size: 25px;
+}
+.j{
+    transform: rotate(29.997deg) translate(200px) rotate(-29.997deg);
+    font-size: 25px;
+}
+.k{
+    transform: rotate(43.326deg) translate(200px) rotate(-43.326deg);
+    font-size: 25px;
+    
+}
+.l{
+    transform: rotate(56.659deg) translate(200px) rotate(-56.659deg);
+    font-size: 25px;
+    
+}
+.m{
+    transform: rotate(69.992deg) translate(200px) rotate(-69.992deg);
+    font-size: 25px;
+   
+}
+.n{
+    transform: rotate(83.325deg) translate(200px) rotate(-83.325deg);
+    font-size: 25px;
+   
+}
+.ñ{
+    transform: rotate(96.658deg) translate(200px) rotate(-96.658deg);
+    font-size: 25px;
+    
+}
+.o{
+    transform: rotate(109.991deg) translate(200px) rotate(-109.991deg);
+    font-size: 25px;
+   
+}
+.p{
+    transform: rotate(123.324deg) translate(200px) rotate(-123.324deg);
+    font-size: 25px;
+  
+}
+.q{
+    transform: rotate(136.657deg) translate(200px) rotate(-136.657deg);
+    font-size: 25px;
+   
+}
+.r{
+    transform: rotate(149.99deg) translate(200px) rotate(-149.99deg);
+    font-size: 25px;
+    
+}
+.s{
+    transform: rotate(163.323deg) translate(200px) rotate(-163.323deg);
+    font-size: 25px;
+    
+}
+.t{
+    transform: rotate(176.656deg) translate(200px) rotate(-176.656deg);
+    font-size: 25px;
+    
+}
+.u{
+    transform: rotate(189.989deg) translate(200px) rotate(-189.989deg);
+    font-size: 25px;
+    
+}
+.v{
+    transform: rotate(203.322deg) translate(200px) rotate(-203.322deg);
+    font-size: 25px;
+   
+}
+.w{
+    transform: rotate(216.655deg) translate(200px) rotate(-216.655deg);
+    font-size: 25px;
+    
+}
+.x{
+    transform: rotate(229.988deg) translate(200px) rotate(-229.988deg);
+    font-size: 25px;
+   
+}
+.y{
+    transform: rotate(243.321deg) translate(200px) rotate(-243.321deg);
+    font-size: 25px;
+    
+}
+.z{
+    transform: rotate(256.654deg) translate(200px) rotate(-256.654deg);
+    font-size: 25px;
+    
+}
+.temporizador{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 35px;
+    width: 50px;
+    border: 2px solid #adb5bd;
+    background-color: #023e8a;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 27px;
+    
+    
+}
+.game__title{
+  
+ text-align: right; 
+  margin-right: 400px;
+  margin-top: -450px;
+
+}
+ .menu__principal {
+    
+    text-align: justify; 
+    margin-left: 714px;
+    margin-top: 40px;
+ }
+
+ .inicio__juego{
+     margin-top: 20px;
+ }
+
+ .pantalla__juego{
+
+    visibility: hidden;
+    margin-left: 714px;
+    margin-top: -100px;
+}

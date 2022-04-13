@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Pasapalabra</title>
+</head>
+<body>
+  <div class="content">
+  <div class="rosco" id="rosco">
+      <div class="letra a" id="a">A</div>
+      <div class="letra b" id="b">B</div>
+      <div class="letra c" id="c">C</div>
+      <div class="letra d" id="d">D</div>
+      <div class="letra e" id="e">E</div>
+      <div class="letra f" id="f">F</div>
+      <div class="letra g" id="g">G</div>
+      <div class="letra h" id="h">H</div>
+      <div class="letra i" id="i">I</div>
+      <div class="letra j" id="j">J</div>
+      <div class="letra k" id="k">K</div>
+      <div class="letra l" id="l">L</div>
+      <div class="letra m" id="m">M</div>
+      <div class="letra n" id="n">N</div>
+      <div class="letra ñ" id="ñ">Ñ</div>
+      <div class="letra o" id="o">O</div>
+      <div class="letra p" id="p">P</div>
+      <div class="letra q" id="q">Q</div>
+      <div class="letra r" id="r">R</div>
+      <div class="letra s" id="s">S</div>
+      <div class="letra t" id="t">T</div>
+      <div class="letra u" id="u">U</div>
+      <div class="letra v" id="v">V</div>
+      <div class="letra w" id="w">W</div>
+      <div class="letra x" id="x">X</div>
+      <div class="letra y" id="y">Y</div>
+      <div class="letra z" id="z">Z</div>
+  </div>
+  <div class="temporizador" id="temporizador">
+
+    <p>300</p>
+
+  </div>
+  
+  <div class="game__title" id="game__title">
+    <h1>PASAPALABRA</h1>
+  </div>
+  <div class="menu__principal" id="menu__principal">
+    <div class="introduction" id="introduction">
+      <h2>Bienvenidos al pasapalabra version ISDI CODERS</h2><br>
+      <h3>Instrucciones</h3><br>
+      <p>Como en el famoso juego de television, le iran saliendo preguntas correspondientes a casa una de las <br>
+        letras del abecedario, si la acierta se le sumara un punto, si en el momento no se la sabe puede pulsar <br>
+        'pasapalabra' y le saltara a la siguiente letra, quedando la anterior con posibilidad de responderla en la <br>
+        siguiente ronda. Una vez completado todo el abecedario, ya sea acertando o fallando, termina el juego. <br><br>
+        Sera capaz de acertarlas todas? Vamos alla! <br><br>
+        Presione el boton para comenzar. </p>
+    </div>
+    <div class="inicio__juego" id="inicio__juego">
+      <label for="name">Nombre</label>
+      <input type="text" id="name">
+      <button class="boton__jugar" id="boton__jugar">JUGAR</button>
+    </div>
+  </div>
+  <div class="pantalla__juego" id="pantalla__juego">
+    <p class="pregunta" id="pregunta"></p>
+    <label for="answer">Respuesta</label>
+    <input type="text" id="answer">
+    <button class="send" id="send">ENVIAR</button>
+    <button class="pasapalabra" id="pasapalabra">PASAPALABRA</BUtton>
+    <button class="exit" id="exit">SALIR</button>
+    <p class="puntuacion" id="puntuacion">Ha acertado 0 preguntas.</p>
+  </div>
+</div> 
+</body>
+</html>
