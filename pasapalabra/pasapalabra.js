@@ -210,97 +210,6 @@ const ranking = [
   { nombre: "maribel", aciertos: 13 },
 ];
 
-const nombreJugador = () => {
-  const nombre = prompt(
-    "Bienvenido a pasapalabra, por favor inserte su nombre: "
-  );
-  if (!nombre) {
-    return nombreJugador();
-  }
-  alert(`Bienvenido ${nombre}`);
-  return nombre;
-};
-
-const mostrarRanking = () => {
-  alert("Aqui tienes el ranking de puntuaciones:");
-  return ranking;
-};
-
-const añadirRanking = () => {
-  let i = 0;
-  while (ranking.length > i && ranking[i].aciertos > aciertos) {
-    i++;
-  }
-  ranking.splice(i, 0, { nombre: nombre, aciertos: aciertos });
-};
-
-const primerRosco = () => {
-  for (let i = 0; i < questions.length; i++) {
-    respuesta = prompt(questions[i].question).toLowerCase();
-
-    if (respuesta === questions[i].answer) {
-      aciertos++;
-      alert(`Respuesta correcta! llevas ${aciertos} aciertos.`);
-    } else if (respuesta === "pasapalabra") {
-      questions[i].status = 1;
-      pasapalabra++;
-    } else if (respuesta === "end") {
-      end = true;
-      return end;
-    } else {
-      alert(
-        "Incorrecto! la respuesta correcta es: " + questions[i].answer + "."
-      );
-      fallos++;
-    }
-  }
-};
-const siguienteRosco = () => {
-  for (let i = 0; i < questions.length; i++) {
-    if (questions[i].status === 1) {
-      respuesta = prompt(questions[i].question).toLowerCase();
-      if (respuesta === questions[i].answer) {
-        questions[i].status = 0;
-        aciertos++;
-        pasapalabra--;
-        alert(`Respuesta correcta! llevas ${aciertos} aciertos.`);
-      } else if (respuesta === "pasapalabra") {
-        questions[i].status = 1;
-      } else if (respuesta === "end") {
-        end = true;
-        return end;
-      } else {
-        alert(
-          "Incorrecto! la respuesta correcta es: " + questions[i].answer + "."
-        );
-        questions[i].status = 0;
-        fallos++;
-        pasapalabra--;
-      }
-    }
-  }
-};
-
-const reseteaVariables = () => {
-  respuesta = "";
-  aciertos = 0;
-  fallos = 0;
-  pasapalabra = 0;
-  nombre = "";
-  end = false;
-};
-
-const instrucciones = () => {
-  return (
-    "Bienvenido al pasapalabra \n",
-    "Le saldran las preguntas a las cuales ha de responder, si la acierta le saldra un aviso que indicara que es correcta y los aciertos que lleva. \n",
-    "En caso contrario le saldra la respuesta que es correcta, si deja la casilla en blanco la respuesta contara como incorrecta. \n",
-    'Puede salir del juego en cualquier momento escribiendo "End" en lugar de la respuesta, tenga en cuenta que en caso de salir su puntuacion no se guardara en el rannking. \n',
-    "Una vez haya terminado el juego le saldra la tabla de rankings con su posicion en el.\n",
-    "Adelante!!!"
-  );
-};
-
 let respuesta = "";
 let aciertos = 0;
 let fallos = 0;
@@ -308,33 +217,92 @@ let pasapalabra = 0;
 let nombre = "";
 let end = false;
 
-const juego = () => {
-  reseteaVariables();
-  nombre = nombreJugador();
-  instrucciones();
-  mostrarRanking();
-  primerRosco();
-  siguienteRosco();
-
-  do {
-    siguienteRosco();
-  } while (pasapalabra > 0);
-
-  if (end === true) {
-    return `Gracias por jugar, has acertado: ${aciertos} y has fallado ${fallos}.`;
-  } else {
-    alert(
-      `Enhorabuena por terminar el juego, has acertado: ${aciertos} preguntas y fallado ${fallos}.`
-    );
-    añadirRanking();
+const nombreJugador = () => {
+  nombre = "Bienvenido a pasapalabra, por favor inserte su nombre: ";
+  if (!nombre) {
+    return nombreJugador();
   }
-  mostrarRanking();
-
-  if (confirm("Desea jugar de nuevo?")) {
-    juego();
-  } else {
-    return "Hasta pronto!";
-  }
+  return `Bienvenido ${nombre}`;
 };
 
-juego();
+const añadirRanking = () => {
+  let i = 0;
+  while (ranking.length > i && ranking[i].aciertos > aciertos) {
+    i++;
+  }
+  ranking.splice(i, 0, { Nombre: nombre, Aciertos: aciertos });
+};
+
+const primerRosco = () => {
+  for (let i = 0; i < questions.length; i++) {
+    respuesta = questions[i].question.toLowerCase();
+
+    if (respuesta === questions[i].answer) {
+      aciertos++;
+      return `Respuesta correcta! llevas ${aciertos} aciertos.`;
+    }
+    if (respuesta === "pasapalabra") {
+      questions[i].status = 1;
+      pasapalabra++;
+    } else if (respuesta === "end") {
+      end = true;
+      return end;
+    } else {
+      return `Incorrecto! la respuesta correcta es: " ${questions[i].answer}  .`;
+    }
+  }
+  const siguienteRosco = () => {
+    for (let i = 0; i < questions.length; i++) {
+      if (questions[i].status === 1) {
+        respuesta = prompt(questions[i].question).toLowerCase();
+        if (respuesta === questions[i].answer) {
+          questions[i].status = 0;
+          aciertos++;
+          pasapalabra--;
+          alert(`Respuesta correcta! llevas ${aciertos} aciertos.`);
+        } else if (respuesta === "pasapalabra") {
+          questions[i].status = 1;
+        } else if (respuesta === "end") {
+          end = true;
+          return end;
+        } else {
+          return `Incorrecto! la respuesta correcta es: ${questions[i].answer}.`;
+          questions[i].status = 0;
+          fallos++;
+          pasapalabra--;
+        }
+      }
+    }
+  };
+
+  const reseteaVariables = () => {
+    respuesta = "";
+    aciertos = 0;
+    fallos = 0;
+    pasapalabra = 0;
+    nombre = "";
+    end = false;
+  };
+
+  const instrucciones = () =>
+    "Bienvenido al pasapalabra Le saldran las preguntas a las cuales ha de responder, si la acierta le saldra un aviso que indicara que es correcta y los aciertos que lleva. En caso contrario le saldra la respuesta que es correcta, si deja la casilla en blanco la respuesta contara como incorrecta. Puede salir del juego en cualquier momento escribiendo En en lugar de la respuesta, tenga en cuenta que en caso de salir su puntuacion no se guardara en el rannking. Una vez haya terminado el juego le saldra la tabla de rankings con su posicion en el Adelante!!!";
+  const juego = () => {
+    reseteaVariables();
+    nombre = nombreJugador();
+    instrucciones();
+    mostrarRanking();
+    primerRosco();
+    siguienteRosco();
+
+    do {
+      siguienteRosco();
+    } while (pasapalabra > 0);
+
+    if (end === true) {
+      return `Gracias por jugar, has acertado: ${aciertos} y has fallado ${fallos}.`;
+    }
+    return `Enhorabuena por terminar el juego, has acertado: ${aciertos} preguntas y fallado ${fallos}.`;
+  };
+
+  juego();
+};
