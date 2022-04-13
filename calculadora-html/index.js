@@ -1,5 +1,3 @@
-const document = 1;
-
 const numeroUno = document.getElementById("uno");
 const numeroDos = document.getElementById("dos");
 const numeroTres = document.getElementById("tres");

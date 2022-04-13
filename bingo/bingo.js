@@ -1,5 +1,6 @@
+/* eslint-disable no-undef */
 let bingoCard = [
-  //primera linea
+  // primera linea
 
   { number: 0, matched: false },
 
@@ -11,7 +12,7 @@ let bingoCard = [
 
   { number: 0, matched: false },
 
-  //segunda linea
+  // segunda linea
 
   { number: 0, matched: false },
 
@@ -23,7 +24,7 @@ let bingoCard = [
 
   { number: 0, matched: false },
 
-  //tercera linea
+  // tercera linea
 
   { number: 0, matched: false },
 
@@ -36,7 +37,15 @@ let bingoCard = [
   { number: 0, matched: false },
 ];
 
-let ranking = [
+let match = 0;
+let count = 0;
+let linea = false;
+let bombo = [];
+let puntos = 200;
+let newNumber;
+let randomNumber;
+
+const ranking = [
   { nombre: "carlos", puntos: 120 },
   { nombre: "Manolo", puntos: 79 },
   { nombre: "Leonardo", puntos: 76 },
@@ -62,36 +71,37 @@ function numeroRepetidoCarton(numeroABuscar) {
 function nuevoCartonBingo() {
   for (let i = 0; i < bingoCard.length; i++) {
     do {
-      var newNumber = newRandomNumber();
+      newNumber = newRandomNumber();
     } while (numeroRepetidoCarton(newNumber) || newNumber < 1);
     bingoCard[i].number = newNumber;
   }
 }
 function mostrarCarton() {
-  primeraLinea = "";
+  let primeraLinea = "";
+  // eslint-disable-next-line no-undef
   for (i = 0; i < 5; i++) {
     if (bingoCard[i].matched) {
-      primeraLinea += "  " + bingoCard[i].number + " X";
+      primeraLinea += `  ${bingoCard[i].number} X`;
     } else {
-      primeraLinea += "  " + bingoCard[i].number + "  ";
+      primeraLinea += `  ${bingoCard[i].number}  `;
     }
   }
   primeraLinea;
   segundaLinea = "";
   for (i = 5; i < 10; i++) {
     if (bingoCard[i].matched) {
-      segundaLinea += "  " + bingoCard[i].number + " X";
+      segundaLinea += `  ${bingoCard[i].number} X`;
     } else {
-      segundaLinea += "  " + bingoCard[i].number + "  ";
+      segundaLinea += `  ${bingoCard[i].number}  `;
     }
   }
   segundaLinea;
   terceraLinea = "";
   for (i = 10; i < 15; i++) {
     if (bingoCard[i].matched) {
-      terceraLinea += "  " + bingoCard[i].number + " X";
+      terceraLinea += `  ${bingoCard[i].number} X`;
     } else {
-      terceraLinea += "  " + bingoCard[i].number + "  ";
+      terceraLinea += `  ${bingoCard[i].number}  `;
     }
   }
   terceraLinea;
@@ -113,7 +123,7 @@ function nuevaBola() {
   count++;
   bombo.push(nuevaBolaBombo);
 
-  alert("La siguiente bola es... el " + nuevaBolaBombo + "!");
+  alert(`La siguiente bola es... el ${nuevaBolaBombo}!`);
   mostrarCarton();
   revisarLinea();
   revisarBingo();
@@ -127,7 +137,7 @@ function siguienteTurno() {
     ) {
       nuevaBola();
     } else {
-      "Gracias por haber jugado! tus bolas acertadas han sido: " + match;
+      `Gracias por haber jugado! tus bolas acertadas han sido: ${match}`;
       otraPartida();
       return;
     }
@@ -209,7 +219,7 @@ function puntuacion() {
     while (ranking.length > i && ranking[i].puntos > puntos) {
       i++;
     }
-    ranking.splice(i, 0, { nombre: userName, puntos: puntos });
+    ranking.splice(i, 0, { nombre: userName, puntos });
   }
 }
 function instrucciones() {
@@ -224,7 +234,7 @@ function instrucciones() {
 }
 function reiniciaVariables() {
   bingoCard = [
-    //primera linea
+    // primera linea
 
     { number: 0, matched: false },
 
@@ -236,7 +246,7 @@ function reiniciaVariables() {
 
     { number: 0, matched: false },
 
-    //segunda linea
+    // segunda linea
 
     { number: 0, matched: false },
 
@@ -248,7 +258,7 @@ function reiniciaVariables() {
 
     { number: 0, matched: false },
 
-    //tercera linea
+    // tercera linea
 
     { number: 0, matched: false },
 
@@ -266,14 +276,6 @@ function reiniciaVariables() {
   bombo = [];
   puntos = 200;
 }
-let match = 0;
-let count = 0;
-let linea = false;
-let bombo = [];
-let puntos = 200;
-
-let userName = prompt("Cual es su nombre?");
-alert(`Bienvenido ${userName}!`);
 
 function bingo() {
   instrucciones();
@@ -282,15 +284,12 @@ function bingo() {
   mostrarCarton();
   generarCartonNuevo();
 
-  if (confirm("Desea empezar el juego?")) {
-    alert("Vamos alla!");
-    mostrarCarton();
-    siguienteTurno();
-    alert("Has terminado el juego en " + count + " turnos.");
-    puntuacion();
-    printRanking();
-  }
-  alert("Hasta pronto!");
+  mostrarCarton();
+  siguienteTurno();
+
+  return `Has terminado el juego en ${count} turnos.`;
 }
+puntuacion();
+userName = "Cual es su nombre?";
 
 bingo();
