@@ -24,7 +24,7 @@ if (primer == "") {
 function suma(n1, n2) {
   resultSum.push(Math.round((n1 + n2) * 1000) / 1000);
 
-  return resultSum;
+  return resultRest;
 }
 function resta(n1, n2) {
   resultRest.push(Math.round((n1 - n2) * 1000) / 1000);
@@ -67,9 +67,21 @@ describe("given the suma function", () => {
       const resultSum = [];
       const expectedResult = [4];
 
-      result = suma(2, 2);
+      const result = suma(2, 2);
 
-      expect(result).toMatchObject(expectedResult);
+      expect(result).toEqual(expectedResult);
+    });
+  });
+  describe("when it recieves the parameters 45 and 45", () => {
+    test("then it should return [90]", () => {
+      const primerNumero = 45;
+      const segundoNumero = 45;
+      const resultSum = [];
+      const expectedResult = [90];
+
+      const result = suma(45, 45);
+
+      expect(result).toEqual(expectedResult);
     });
   });
 });
