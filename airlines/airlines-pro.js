@@ -152,7 +152,7 @@ function eliminarVuelo() {
   }
   prompt("Actualizando lista de vuelos...");
   for (let i = 0; i < flights.length; i++) {
-    console.log(flights[i]);
+    flights[i];
   }
 
   if (confirm("Desea eliminar otro vuelo?") && flights.length > 0) {
